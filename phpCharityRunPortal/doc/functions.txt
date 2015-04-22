@@ -1,0 +1,180 @@
+USAGE
+=====
+
+$query = function(args);
+$array = fetchResults($query);
+(oder natuerlich $array = fetchResults(function(args)))
+
+$array ist dann zweidimensional, $array[zeile][spalte]
+Die Spaltennamen sind in den Arrays drin.
+
+AVAILABLE FUNCTIONS
+===================
+
+function activateAccount($id, $g)
+Hilfsfunktion für activateUserAccount
+
+function activateHelper($id, $g) 
+Hilfsfunktion für activateUserAccount
+
+function activateUserAccount($u, $g, $ac) 
+Aktiviere Account $u in Gruppe $g mit angegebenem Code $ac
+
+function addCharityPartner($name, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $email, $transparenz, $passwort) 
+Charity Partner hinzufügen
+
+function addCharityProjekt($bezeichnung, $beschreibung, $url, $spenden_start, $spenden_ende, $organisator_id) 
+Charity Projekt hinzufügen
+
+function addEvent($bezeichnung, $termin, $ort, $website, $max_tn, $beschreibung, $geb, $iban, $bic, $betrag, $empfaenger) 
+Event hinzufügen
+
+function addLaeufer($name, $vorname, $verein, $geschlecht, $geburtsdatum, $email, $passwort) 
+Läufer registrieren
+
+function addParticipant($track, $runner) 
+Läufer $runner für Strecke $track eintragen
+
+function addPayment($wettkampf, $laeufer)
+Zahlungseingang für $wettkampf von $laeufer eintragen
+
+function addPaymentCharityPartner($proj, $part) 
+Spendeneingang eintragen
+
+function addSponsoringPartnerProjekt($proj, $part, $pausch) 
+Spendenzusage eintragen
+
+function addSponsoringProjektWettkampf($proj, $wett) 
+Charityprojekt bei Wettkampf eintragen
+
+function addTrack($wettkampf_id, $laenge, $bezeichnung, $beschreibung, $url, $termin) 
+Strecke zum Wettkampf hinzufügen
+
+function editCharityPartner($id, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $transparenz) 
+Charitypartner bearbeiten (Userseitig)
+
+function editCharityPartnerAdmin($id, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $email, $transparenz) 
+Charitypartner bearbeiten (Admin)
+
+function editCharityProjekt($id, $bezeichnung, $beschreibung, $url, $spenden_start, $spenden_ende) 
+Charityprojekt bearbeiten
+
+function editEmail($id, $role, $email) 
+eMailadresse ändern
+
+function editEvent($id, $bezeichnung, $termin, $ort, $website, $max_tn, $beschreibung, $geb, $iban, $bic, $betrag, $empfaenger) 
+Wettkampf bearbeiten
+
+function editLaeufer($id, $verein) 
+Läufer bearbeiten (Userseitig)
+
+function editLaeuferAdmin($id, $name, $vorname, $verein, $geschlecht, $geburtsdatum, $email) 
+Läufer bearbeiten (Admin)
+
+function editPasswort($id, $role, $passwort) 
+Passwort ändern
+
+function editTrack($id, $wettkampf_id, $laenge, $bezeichnung, $beschreibung, $url, $termin) 
+Strecke bearbeiten
+
+function fetchResults($query) 
+$query ausführen
+
+function getActivationData($mail, $group) 
+Hilfsfunktion für Aktivierungsmail
+
+function getActivationText($name, $group, $id, $activationcode) 
+Hilfsfunktion für Aktivierungsmail
+
+function getCharityByWettkampf($wett) 
+Charityprojekte nach Wettkampf abfragen
+
+function getCharityPartner($count, $offset) 
+Charitypartner abfragen
+
+function getCharityProjekte($count, $offset) 
+Charityprojekte abfragen
+
+function getEvents($count, $offset) 
+Wettkämpfe abfragen
+
+function getEventsByRunner($count, $offset, $id) 
+Wettkämpfe abfragen, an denen Läufer $id teilnimmt
+
+function getFutureEvents($count, $offset)
+Zukünftige Wettkämpfe abfragen
+ 
+function getIdByEmail($g, $email) 
+UserID nach Mailadresse abfragen (PW Vergessen)
+
+function getNotPaid($id) 
+Welche User haben für Wettkampf $id nicht gezahlt
+
+function getPaid($id) 
+Welche User haben für Wettkampf $id gezahlt
+
+function getParticipants($count, $offset) 
+Alle Läufer abfragen
+
+function getParticipantsByEvent($event) 
+-"- nach Wettkampf
+
+function getParticipantsByTrack($track) 
+-"- nach Strecke
+
+function getPass($email, $role) 
+Hilfsfunktion für Passwortüberprüfung
+
+function getSingleCharityPartner($id) 
+Daten zu Charitypartner $id abfragen
+
+function getSingleCharityProjekt($id) 
+Daten zu Charityprojekt $id abfragen
+
+function getSingleEvent($id) 
+Daten zu Event $id abfragen
+
+function getSingleParticipant($id) 
+Daten zu Teilnehmer $id abfragen
+
+function getSponsoringPartnerProjekt($part) 
+Welche Projekte Sponsort Charitypartner $part
+
+function getTrackInformation($event, $track) 
+Streckeninformationen zu $track abrufen
+
+function getTracksByEvent($event) 
+Streckeninformationen für $event (Wettkampf) abrufen
+
+function login_main($email, $role, $password) 
+login Funktion
+
+function logout() 
+...
+
+function removeCharityPartner($id) 
+function removeCharityProjekt($id) 
+function removeEvent($id) 
+function removeParticipant($track, $runner) 
+function removeSingleParticipant($id) 
+function removeSponsoringProjektwettkampf($proj, $wett) 
+function removeTrack($id) 
+sollte klar sein, Fremdschlüssel sorgen für "kleine" Anfragen
+
+function resetPasswort($email, $g) 
+neues Passwort anfordern
+
+function rtt($role) 
+Hilfsfunktion, übersetzt gruppen-id in Tabellen-Namen
+
+function selectCharityProj($laeufer, $wett, $proj) 
+Läufer setzt sein CharityProjekt für den Wettkampf
+
+function sendActivationMail($mail, $group) 
+Aktivierungsmail
+
+function sendPasswortResetMail($mail, $pass) 
+Passwortmail
+
+function shutdown() 
+Nach Scriptausführung DB Verbindung killen

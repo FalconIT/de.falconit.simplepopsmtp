@@ -1,0 +1,60 @@
+function activateAccount($id, $g) {
+function activateHelper($id, $g) {
+function activateUserAccount($u, $g, $ac) {
+function addCharityPartner($name, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $email, $transparenz, $passwort) {
+function addCharityProjekt($bezeichnung, $beschreibung, $url, $spenden_start, $spenden_ende, $organisator_id) {
+function addEvent($bezeichnung, $termin, $ort, $website, $max_tn, $beschreibung, $geb, $iban, $bic, $betrag, $empfaenger) {
+function addLaeufer($name, $vorname, $verein, $geschlecht, $geburtsdatum, $email, $passwort) {
+function addParticipant($track, $runner) {
+function addPayment($wettkampf, $laeufer) {
+function addPaymentCharityPartner($proj, $part) {
+function addSponsoringPartnerProjekt($proj, $part, $pausch) {
+function addSponsoringProjektWettkampf($proj, $wett) {
+function addTrack($wettkampf_id, $laenge, $bezeichnung, $beschreibung, $url, $termin) {
+function editCharityPartner($id, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $transparenz) {
+function editCharityPartnerAdmin($id, $adresse2, $strasse, $plz, $ort, $land, $telefon, $adresse1, $email, $transparenz) {
+function editCharityProjekt($id, $bezeichnung, $beschreibung, $url, $spenden_start, $spenden_ende) {
+function editEmail($id, $role, $email) {
+function editEvent($id, $bezeichnung, $termin, $ort, $website, $max_tn, $beschreibung, $geb, $iban, $bic, $betrag, $empfaenger) {
+function editLaeufer($id, $verein) {
+function editLaeuferAdmin($id, $name, $vorname, $verein, $geschlecht, $geburtsdatum, $email) {
+function editPasswort($id, $role, $passwort) {
+function editTrack($id, $wettkampf_id, $laenge, $bezeichnung, $beschreibung, $url, $termin) {
+function fetchResults($query) {
+function getActivationData($mail, $group) {
+function getActivationText($name, $group, $id, $activationcode) {
+function getCharityByWettkampf($wett) {
+function getCharityPartner($count, $offset) {
+function getCharityProjekte($count, $offset) {
+function getEvents($count, $offset) {
+function getEventsByRunner($count, $offset, $id) {
+function getFutureEvents($count, $offset) {
+function getIdByEmail($g, $email) {
+function getNotPaid($id) {
+function getPaid($id) {
+function getParticipants($count, $offset) {
+function getParticipantsByEvent($event) {
+function getParticipantsByTrack($track) {
+function getPass($email, $role) {
+function getSingleCharityPartner($id) {
+function getSingleCharityProjekt($id) {
+function getSingleEvent($id) {
+function getSingleParticipant($id) {
+function getSponsoringPartnerProjekt($part) {
+function getTrackInformation($event, $track) {
+function getTracksByEvent($event) {
+function login_main($email, $role, $password) {
+function logout() {
+function removeCharityPartner($id) {
+function removeCharityProjekt($id) {
+function removeEvent($id) {
+function removeParticipant($track, $runner) {
+function removeSingleParticipant($id) {
+function removeSponsoringProjektwettkampf($proj, $wett) {
+function removeTrack($id) {
+function resetPasswort($email, $g) {
+function rtt($role) {
+function selectCharityProj($laeufer, $wett, $proj) {
+function sendActivationMail($mail, $group) {
+function sendPasswortResetMail($mail, $pass) {
+function shutdown() {
